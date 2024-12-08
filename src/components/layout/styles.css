@@ -1,0 +1,11 @@
+.layout-login {
+    @apply flex items-center  w-screen h-screen bg-[url('../../assets/bg-1.jpg')] bg-cover bg-no-repeat bg-right ;
+}
+
+.layout-form-container {
+    @apply w-1/2 h-full bg-white flex items-center justify-center bg-opacity-90 ;
+}
+
+.layout-form-content {
+    @apply justify-center;
+}

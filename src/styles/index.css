@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    html {
+        @apply !h-full !bg-gray-100 !font-poppins;
+    };
+
+    body {
+        @apply !h-full !font-poppins;
+    };
+
+    .container {
+        @apply w-full h-full !max-w-full px-6;
+    }
+};
