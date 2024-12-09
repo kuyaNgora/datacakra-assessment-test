@@ -18,6 +18,9 @@ export const articleSlice = createSlice({
         [action?.payload?.name]: action?.payload?.data,
       };
     },
+    $reset: () => {
+      return defineInitialState();
+    },
   },
 });
 
@@ -28,7 +31,7 @@ export const articleSlice = createSlice({
  * They allow for logging the user in by setting the user session data,
  * and logging the user out by clearing the session.
  */
-export const { $get } = articleSlice.actions;
+export const { $get, $reset } = articleSlice.actions;
 
 /**
  * Reducer for the auth slice.

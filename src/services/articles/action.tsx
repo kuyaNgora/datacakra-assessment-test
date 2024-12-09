@@ -1,6 +1,16 @@
-import { request } from "../axios";
+/**
+ * Article API Utilities
+ * =====================
+ * A collection of utility functions for interacting with the `Article` API resource.
+ *
+ * This module includes methods to perform CRUD (Create, Read, Update, Delete) operations
+ * for `Article` entities. Each function uses Axios for HTTP requests and adheres to a
+ * consistent structure for error handling and data handling.
+ */
+
 import { AxiosRequestConfig } from "axios";
 import { ArticleParams, ArticlePayload, ShowParams } from "./types";
+import { request } from "../axios";
 
 /**
  * Module name to namespace actions.
@@ -31,6 +41,15 @@ export const $get = async (params: ArticleParams): Promise<any> => {
   return request(options);
 };
 
+/**
+ * Fetch a single article by its document ID.
+ *
+ * @async
+ * @function $show
+ * @param {string} documentId - The ID of the article to retrieve.
+ * @param {ShowParams} params - Additional query parameters for the API request.
+ * @returns {Promise<any>} The API response containing the article data.
+ */
 export const $show = async (
   documentId: string,
   params: ShowParams
@@ -47,6 +66,14 @@ export const $show = async (
   return request(options);
 };
 
+/**
+ * Create a new article.
+ *
+ * @async
+ * @function $create
+ * @param {ArticlePayload} payload - The payload containing article data to create.
+ * @returns {Promise<any>} The API response after creating the article.
+ */
 export const $create = async (payload: ArticlePayload): Promise<any> => {
   const data = {
     data: payload,
@@ -64,6 +91,15 @@ export const $create = async (payload: ArticlePayload): Promise<any> => {
   return request(options);
 };
 
+/**
+ * Update an existing article.
+ *
+ * @async
+ * @function $update
+ * @param {string} documentId - The ID of the article to update.
+ * @param {ArticlePayload} payload - The payload containing updated article data.
+ * @returns {Promise<any>} The API response after updating the article.
+ */
 export const $update = async (
   documentId: string,
   payload: ArticlePayload
@@ -84,6 +120,14 @@ export const $update = async (
   return request(options);
 };
 
+/**
+ * Delete an article by its document ID.
+ *
+ * @async
+ * @function $delete
+ * @param {string} documentId - The ID of the article to delete.
+ * @returns {Promise<any>} The API response after deleting the article.
+ */
 export const $delete = async (documentId: string): Promise<any> => {
   const options: AxiosRequestConfig = {
     method: "DELETE",

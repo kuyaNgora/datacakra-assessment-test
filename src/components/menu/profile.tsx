@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { logout } from "../../services/auth/slice";
 import { RootState } from "../../services/store";
+import { $reset } from "../../services/articles/slice";
 
 interface MenuProps {
   className?: string; // className is optional
@@ -15,6 +16,7 @@ const ProfileMenu: React.FC<MenuProps> = ({ className }) => {
   const dispatch = useDispatch();
 
   const handleLogout = async () => {
+    dispatch($reset());
     dispatch(logout());
   };
 
